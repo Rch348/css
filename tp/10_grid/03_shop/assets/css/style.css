@@ -1,0 +1,156 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css);
+
+:root
+{
+   --black: #000629;
+   --darkgrey: #c0c0c0; 
+   --grey: #e0e0e0;
+   --white: #fff;
+}
+
+*
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html
+{
+   color: var(--black);
+   font-family: 'Roboto', sans-serif;
+   font-size: 62.5%;
+   letter-spacing: 1px;
+}
+
+body
+{
+   font-size: 1.9rem;
+}
+
+a
+{
+   color: inherit;
+   text-decoration: none;
+}
+
+h1
+{
+   font-weight: 800;
+}
+
+ul
+{
+   list-style: none;
+}
+
+
+
+/* ------ UTILITAIRES ------ */
+
+.btn
+{
+   background-color: var(--black);
+   color: var(--white);
+   display: inline-block;
+   height: 6rem;
+   line-height: 0;
+   padding: 3.1rem;
+   text-align: center;
+   text-transform: uppercase;
+   width: 31rem;
+}
+
+.d-flex
+{
+   display: flex;
+}
+
+.d-grid
+{
+   display: grid;
+}
+
+
+
+/* ------ HEADER ------ */
+
+header
+{
+   border-bottom: .7px solid var(--grey);
+   width: 100%;
+}
+
+header > nav
+{
+   align-items: center;
+   justify-content: space-between;
+   margin: 2.3rem auto;
+   max-width: 114rem;
+}
+
+header nav ul
+{
+   color: var(--darkgrey);
+   font-weight: 500;
+   gap: 2.4rem;
+}
+
+
+
+/* ------ SECTION ------ */
+
+.hero > p
+{
+   color: var(--darkgrey);
+   text-transform: uppercase;
+}
+
+span
+{
+   color: var(--black);
+}
+
+.air-pod
+{
+   grid-template: repeat(4, 20rem) / repeat(3, 20rem);
+   
+}
+
+img
+{
+   height: 100%;
+   object-fit: cover;
+   max-width: 10rem;
+}
+
+.ap1
+{
+   grid-row-start: 1;
+   grid-column-start: 1;
+   grid-row-end: 3;
+   grid-column-end: 3;
+}
+
+.ap2
+{
+   grid-row: 3 / 4 ;
+   grid-column: 1 / 2;
+}
+
+.ap3
+{
+   grid-area: 3 / 2 / 4 / 3;
+}
+
+.ap4
+{
+   grid-area: 3 / 3 / 4 / 4;
+}
+
+.hero article div p::after
+{
+   content: "";
+   border-bottom: .7px solid var(--grey);
+}
+

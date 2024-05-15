@@ -1,0 +1,111 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css);
+
+:root
+{
+   --green: #59e497;
+}
+
+*
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html
+{
+   font-family: 'Montserrat', sans-serif;
+   font-size: 62.5%;
+}
+
+body
+{
+   font-size: 1.5rem;
+
+}
+
+h1
+{
+   font-size: 6.4rem;
+   margin-top: 7rem;
+   text-align: center;
+   text-transform: capitalize;
+}
+
+section
+{
+   display: grid;
+   grid-template-rows: repeat(4, 20rem);
+   grid-template-columns: repeat(4, 20rem);
+   gap: 1.6rem;
+   /* Toujours donner une width à l'élément que l'on veut centrer avec MARGIN: auto; ATTENTION! Pas de width dans <body>!!*/
+   margin: 3rem auto;
+   max-width: 85rem;
+}
+
+img
+{
+   height: 100%;
+   object-fit: cover;
+   width: 100%;
+}
+
+p
+{
+   background-color: var(--green);
+   padding: 2.3rem;
+}
+
+.a
+{
+   /* background: url(../img/unsplash-1.jpg) no-repeat center center/cover; */
+   grid-column: span 2;
+}
+
+/* .b
+{
+   background: url(../img/unsplash-2.jpg) no-repeat center center/cover;
+} */
+
+.c
+{
+   /* background: url(../img/unsplash-3.jpg) no-repeat center center/cover; */
+   grid-row: span 2;
+}
+
+.d
+{
+   /* background: url(../img/unsplash-4.jpg) no-repeat center center/cover; */
+   grid-column: span 2;
+}
+
+/* .e
+{
+   background: url(../img/unsplash-5.jpg) no-repeat center center/cover;
+} */
+
+/* .f
+{
+   background: url(../img/unsplash-6.jpg) no-repeat center center/cover;
+} */
+
+/* .g
+{
+   background: url(../img/unsplash-7.jpg) no-repeat center center/cover;
+} */
+
+/* .h
+{
+   background: url(../img/unsplash-8.jpg) no-repeat center center/cover;
+} */
+
+.i
+{
+   /* background: url(../img/unsplash-9.jpg) no-repeat center center/cover; */
+   grid-column: span 2;
+}
+
+/* .j
+{
+   background: url(../img/unsplash-1.jpg) no-repeat center center/cover;
+} */
