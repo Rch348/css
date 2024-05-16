@@ -65,7 +65,7 @@ h2 + p
 
 /* ------ UTILITAIRES ------ */
 
-.active
+.dot, .active, header nav div ul li a:hover
 {
    color: var(--red2);
 }
@@ -75,6 +75,7 @@ h2 + p
    background-color: var(--red2);
    border-radius: 3px;
    color: var(--white);
+   cursor: pointer;
    font-weight: 700;
    gap: 1rem;
    height: 6rem;
@@ -142,7 +143,6 @@ header
 {
    background-color: var(--white);
    box-shadow: var(--shadow);
-   height: 7rem;
    padding: 1.8rem 26rem;
    position: fixed;
    top: 0;
@@ -151,18 +151,14 @@ header
 
 nav
 {
+   height: 7rem;
    justify-content: space-between;
+   align-items: center;
 }
 
 nav > a
 {
    color: var(--black1);
-   line-height: 2.88rem;
-}
-
-.dot
-{
-   color: var(--red2);
 }
 
 ul
@@ -170,6 +166,50 @@ ul
    gap: 3.2rem;
    line-height: 7rem;
    list-style: none;
+}
+
+/* MENU BURGER */
+.menu-burger, .menu-icon
+{
+   display: none;
+   justify-self: end;
+   order: 3;
+}
+
+.menu-icon i
+{
+   background-color: var(--black1);
+   display: block;
+   width: 2rem;
+   height: 1px;
+   transition: all .3s ease;
+}
+
+.menu-icon i + i
+{
+   margin-top: 6px;
+}
+
+/* ~ : cible un élément enfant ayant le même parent (direct ou non-direct) */
+.menu-burger:checked ~ .menu
+{
+   height: calc(100vh -7rem);
+   opacity: 1;
+}
+
+.menu-burger:checked + .menu-icon i:nth-child(1)
+{
+   transform: translateY(7px) rotate(45deg);
+}
+
+.menu-burger:checked + .menu-icon i:nth-child(2)
+{
+   opacity: 0;
+}
+
+.menu-burger:checked + .menu-icon i:nth-child(3)
+{
+   transform: translateY(-7px) rotate(-45deg);
 }
 
 
@@ -190,7 +230,7 @@ h1
    padding-top: 31rem;
 }
 
-.hero div
+.hero article
 {
    background-color: var(--transparent);
    border-radius: 6px;
@@ -202,12 +242,12 @@ h1
    max-width: 76rem;
 }
 
-.hero > div > p
+.hero > article > p
 {
    line-height: 3.6rem;
 }
 
-.hero > div > a
+.hero > article > a
 {
    width: 25.9rem;
 }
@@ -461,7 +501,7 @@ footer
 
 /* ------ MEDIA QUERIES ------ */
 
-@media (max-width: 1919px)
+/* @media (max-width: 1919px)
 {
    .tours, .care, .win
    {
@@ -480,16 +520,38 @@ footer
    {
       align-items: center;
    }
-}
+} */
 
 @media (max-width: 849px)
 {
-   header
+   .menu-icon
    {
-      padding: 2rem;
+      cursor: pointer;
+      display: inline-block;
+      z-index: 1;
    }
 
-   ul
+   .menu
+   {
+      align-items: center;
+      flex: 1 1 100%;
+      flex-direction: column;   
+      height: 0; 
+      justify-content: center;
+      left: 0;
+      /*  Pas de 'display: none;' car l'animation ne fonctionnerait pas => opacity */
+      opacity: 0;
+      position: absolute;
+      transition: all .3s ease-in-out;
+   }
+
+   .menu li
+   {
+      text-align: center;
+      width: 100%;
+   }
+
+   /* ul
    {  
       gap: 1.8rem;
    }
@@ -508,8 +570,8 @@ footer
    h2 + p
    {
       margin-bottom: 3rem;
-   }
-}
+   }*/
+} 
 
 @media (max-width: 579px)
 {

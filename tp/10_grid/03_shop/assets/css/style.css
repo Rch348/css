@@ -2,7 +2,7 @@
 
 :root
 {
-   --black: #000629;
+   --dark: #000629;
    --darkgrey: #c0c0c0; 
    --grey: #e0e0e0;
    --white: #fff;
@@ -17,7 +17,7 @@
 
 html
 {
-   color: var(--black);
+   color: var(--dark);
    font-family: 'Roboto', sans-serif;
    font-size: 62.5%;
    letter-spacing: 1px;
@@ -50,7 +50,7 @@ ul
 
 .btn
 {
-   background-color: var(--black);
+   background-color: var(--dark);
    color: var(--white);
    display: inline-block;
    height: 6rem;
@@ -59,6 +59,12 @@ ul
    text-align: center;
    text-transform: uppercase;
    width: 31rem;
+}
+
+.container
+{
+   margin: 0 auto;
+   max-width: 140rem;
 }
 
 .d-flex
@@ -85,8 +91,6 @@ header > nav
 {
    align-items: center;
    justify-content: space-between;
-   margin: 2.3rem auto;
-   max-width: 114rem;
 }
 
 header nav ul

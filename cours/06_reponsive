@@ -1,0 +1,6 @@
+<!-- POINTS DE RUPTURE :
+
+- SMALL DEVICE : 0 à 599px (h1 ne doit pas dépasser 40px)
+- MEDIUM DEVICE : 600 0 899px
+- LARGE DEVICE : 900 à 1199px
+- EXTRA LARGE DEVICE : 1200px -->
