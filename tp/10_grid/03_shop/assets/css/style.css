@@ -21,6 +21,7 @@ html
    font-family: 'Roboto', sans-serif;
    font-size: 62.5%;
    letter-spacing: 1px;
+   line-height: 1.5;
 }
 
 body
@@ -34,9 +35,10 @@ a
    text-decoration: none;
 }
 
-h1
+h1, h2
 {
-   font-weight: 800;
+   font-weight: 700;
+   margin: 2.7rem 0;
 }
 
 ul
@@ -48,23 +50,30 @@ ul
 
 /* ------ UTILITAIRES ------ */
 
+.active, a:hover
+{
+   color: var(--dark);
+}
+
 .btn
 {
    background-color: var(--dark);
    color: var(--white);
+   cursor: pointer;
    display: inline-block;
    height: 6rem;
    line-height: 0;
-   padding: 3.1rem;
+   margin: 2.7rem 0;
+   /* padding: 3.2rem 0; */
    text-align: center;
    text-transform: uppercase;
-   width: 31rem;
+   width: 27rem;
 }
 
 .container
 {
    margin: 0 auto;
-   max-width: 140rem;
+   max-width: 113.6rem;
 }
 
 .d-flex
@@ -84,6 +93,7 @@ ul
 header
 {
    border-bottom: .7px solid var(--grey);
+   padding: 2.9rem 0;
    width: 100%;
 }
 
@@ -91,36 +101,62 @@ header > nav
 {
    align-items: center;
    justify-content: space-between;
+
 }
 
-header nav ul
+header > nav ul
 {
    color: var(--darkgrey);
    font-weight: 500;
    gap: 2.4rem;
 }
 
+header > nav > a
+{
+   font-size: 1.9rem;
+   font-weight: 800;
+}
 
 
-/* ------ SECTION ------ */
 
-.hero > p
+/* ------ HERO ------ */
+
+.hero
+{
+   
+}
+
+.hero > div
+{
+   border-bottom: .7 solid var(--grey);
+   padding-bottom: 4.4rem;
+}
+
+.hero > div > p
 {
    color: var(--darkgrey);
+   font-size: 1.4rem;
+   margin-bottom: 3.4rem;
+   margin-top: 2.4rem;
    text-transform: uppercase;
 }
 
-span
+.hero > div > p > span
 {
-   color: var(--black);
+   color: var(--grey);
 }
 
-.air-pod
+.hero > div > article
+{
+   gap: 3.2rem;
+}
+
+.photos
 {
    grid-template: repeat(4, 16.3rem) / repeat(3, 21.6rem);
    gap: 1.5rem;
-   width: 64.8rem;
-   height: 61.2rem;
+   max-width: 64.9em;
+   height: 61.5rem;
 }
 
 img
@@ -155,9 +191,47 @@ img
    grid-column: 3 / 4;
 }
 
-.hero article div p::after
+.description
 {
-   content: "";
-   border-bottom: .7px solid var(--grey);
+   max-width: 45.5rem;
 }
 
+h1
+{
+   font-size: 4.5rem;
+}
+
+h2
+{
+   font-size: 3.4rem;
+}
+
+.p1
+{
+   border-top: .7px solid var(--grey);
+   padding-bottom: 2rem;
+   padding-top: 2.7rem;
+}
+
+/* .description > h3::after
+{
+   content: "";
+   border: .7px solid var(--grey);
+   transform: rotate(90deg) translateY(7px);
+} */
+
+.btn[value="ajouter au panier"]
+{
+
+   font-size: 1.9rem;
+   text-transform: uppercase;
+}
+
+
+
+/* ------ AUTRES ------ */
+
+.autres
+{
+   
+}
