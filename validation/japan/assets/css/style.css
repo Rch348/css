@@ -23,7 +23,6 @@
    line-height: 3rem;
    margin: 0;
    padding: 0;   
-
 }
 
 html
@@ -47,20 +46,34 @@ a
    text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6
+{
+   font-weight: 700;
+   line-height: 5.8rem;
+}
+
 h2
 {
    font-size: 5.6rem;
-   font-weight: 700;
-   line-height: 5.8rem;
    margin-bottom: 2rem;
-   text-align: center;
 }
 
 h2 + p
 {
+   font-size: 2rem;
    margin-bottom: 8rem;
 }
 
+section
+{
+   padding: 10vw 2rem;
+   text-align: center;
+}
+
+ul
+{
+   list-style: none;
+}
 
 
 /* ------ UTILITAIRES ------ */
@@ -143,7 +156,7 @@ header
 {
    background-color: var(--white);
    box-shadow: var(--shadow);
-   padding: 1.8rem 26rem;
+   padding: 0 26rem;
    position: fixed;
    top: 0;
    width: 100%;
@@ -168,7 +181,7 @@ ul
    list-style: none;
 }
 
-/* MENU BURGER */
+/* ------ MENU BURGER ------ */
 .menu-burger, .menu-icon
 {
    display: none;
