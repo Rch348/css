@@ -1,48 +1,46 @@
-/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"); => Celle-ci n'est pas tout à fait la même */
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root
 {
-   --black1: #000829;
-   --red1: #C53135;
-   --black2: #213442;
-   --red2: #E83F43;
-   --black3: rgba(0, 0, 0, .6);
+   --primary-dark: #213442;
+   --primary-red: #E83F43;
+   --dark-logo: #000829;
+   --hover-red: #C53135;
+   --darkshadow: rgba(0, 0, 0, .6);
    --white: #FFF;
    --transparent: rgba(255, 255, 255, .7);
    --lightgrey: #E9EBED;
-   --shadow: 0 4px 4px rgba(0, 0, 0, .25);
+   --shadow: 0 2px 20px rgba(0, 0, 0, .04);
    --darkgrey: #4D5D68;
 }
 
 *
 {
    box-sizing: border-box;
-   font-size: 2rem;
-   letter-spacing: .1px;
-   line-height: 3rem;
    margin: 0;
-   padding: 0;   
+   padding: 0;
+   text-transform: capitalize;
 }
 
 html
 {
-   color: var(--black2);
+   color: var(--primary-dark);
    font-family: 'Barlow', sans-serif;
    font-size: 62.5%;
    font-weight: 400;
-   text-transform: capitalize;
+   /* letter-spacing: .1px; */
+   line-height: 1.5;
 }
 
 body
 {
-   line-height: 3rem;
    font-size: 2rem;
 }
 
 a
 {
    color: inherit;
+   cursor: pointer;
    text-decoration: none;
 }
 
@@ -60,7 +58,6 @@ h2
 
 h2 + p
 {
-   font-size: 2rem;
    margin-bottom: 8rem;
 }
 
@@ -76,31 +73,32 @@ ul
 }
 
 
-/* ------ UTILITAIRES ------ */
 
-.dot, .active, header nav div ul li a:hover
-{
-   color: var(--red2);
-}
+/* ------ UTILITAIRES ------ */
 
 .btn
 {
-   background-color: var(--red2);
+   background-color: var(--primary-red);
    border-radius: 3px;
    color: var(--white);
-   cursor: pointer;
+   /* Les propriétés 'display: inline-block' et 'line-height' combinées permettent de définir la hauteur du conteneur de l'élément tout en augmentant sa surface cliquable et sans se soucier de la hauteur du padding => Très utile ppour les boutons ou items de menu. */
+   display: inline-block;
    font-weight: 700;
-   gap: 1rem;
-   height: 6rem;
    letter-spacing: .2px;
-   padding: 15px 32px;
-   text-align: center;
+   line-height: 6rem;
+   padding: 0 3.2rem;
    transition: all .7s ease-out;
 }
 
 .btn:hover
 {
-   background-color: var(--red1);
+   background-color: var(--hover-red);
+}
+
+.container
+{
+   margin: 0 auto;
+   max-width: 140rem;
 }
 
 .d-flex
@@ -113,39 +111,14 @@ ul
    text-transform: lowercase;
 }
 
-.pad1
-{
-   padding: 10rem 24rem;
-}
-
-.radius6
-{
-   border-radius: 6px;
-}
-
 .size16
 {
    font-size: 1.6rem;
 }
 
-.size18
-{
-   font-size: 1.8rem;
-}
-
 .size24
 {
    font-size: 2.4rem;
-}
-
-.txt-center
-{
-   text-align: center;
-}
-
-.weight7
-{
-   font-weight: 700;
 }
 
 
@@ -156,10 +129,11 @@ header
 {
    background-color: var(--white);
    box-shadow: var(--shadow);
-   padding: 0 26rem;
+   padding: 0 4rem;
    position: fixed;
    top: 0;
    width: 100%;
+   z-index: 10;
 }
 
 nav
@@ -169,16 +143,25 @@ nav
    align-items: center;
 }
 
-nav > a
+.logo
 {
-   color: var(--black1);
+   font-weight: 700;
 }
 
-ul
+.dot, .active, header nav div ul li a:hover
+{
+   color: var(--primary-red);
+}
+
+.menu
 {
    gap: 3.2rem;
-   line-height: 7rem;
-   list-style: none;
+}
+
+.menu li a
+{
+   font-size: 1.8rem;
+   font-weight: 700;
 }
 
 /* ------ MENU BURGER ------ */
@@ -229,97 +212,70 @@ ul
 
 /* ------ HERO / EXPLORE ------ */
 
-h1
-{
-   font-size: 6.4rem;
-   line-height: 7.6rem;
-}
-
 .hero
 {
-   height: 100vh;
    background: url(../img/hero-bkg\ 1.jpg) no-repeat center center/cover;
-   margin: 6rem auto 0;
-   padding-top: 31rem;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
 }
 
 .hero article
 {
    background-color: var(--transparent);
    border-radius: 6px;
-   flex-direction: column;
+   /* L'élément 'article' prend toujours 50% de la largeur de son conteneur => Utile en responsive. */
+   flex: 0 1 50%;
    min-height: 33.2rem;
-   justify-content: space-between;
-   margin: 0 auto;
-   padding: 3rem;
+   padding: 3.2rem;
    max-width: 76rem;
+   text-align: left;
 }
 
-.hero > article > p
+h1
 {
-   line-height: 3.6rem;
+   font-size: 6.4rem;
+   line-height: 7.6rem;
+   margin-bottom: 2rem;
 }
 
-.hero > article > a
+.hero article p
 {
-   width: 25.9rem;
+   margin-bottom: 4rem;
 }
 
 
 
-/* ------ TOURS ------ */
+/* ------ TRIPS ------ */
 
-.tours
-{
-   min-height: 126.8rem;
-}
-
-.cards
+.trips div
 {
    flex-wrap: wrap;
-   gap: 10rem;
+   gap: 12rem;
+   justify-content: center;
 }
 
-.card
+.trip
 {
-   color: var(--white);
-   display: flex;
-   flex-direction: column;
-   justify-content: end;
-   align-items: end;
-   height: 38rem;
    border-radius: 6px;
-   padding: 3.2rem 3.7rem;
-   width: 64rem;
+   position: relative;
+   text-align: right;
 }
 
-.history
+.trip div
 {
-   background: url(../img/history-img.jpg);
-}
-
-.natural
-{
-   background: url(../img/natural-img.jpg);
-}
-
-.cultural
-{
-   background: url(../img/cultural-img.jpg);
-}
-
-.animal
-{
-   background: url(../img/matthieu-img.jpg);
+   /* Toujours mettre une 'position: relative' au parent d'un élément positionné en 'absolute' (ici; à la classe trip) . */
+   position: absolute;
+   right: 3.2rem;
+   bottom: 3.2rem;
 }
 
 h3
 {
+   color: var(--white);
    font-size: 3.6rem;
-   letter-spacing: .3px;
-   line-height: 5.4rem;
+   /* letter-spacing: .3px; */
    margin-bottom: 1.6rem;
-   text-align: end;
 }
 
 
@@ -342,46 +298,6 @@ h3
    color: var(--white);
    height: 48rem;
    width: 47.5rem;
-}
-
-.meguro
-{
-   background: url(../img/meguro-river.jpg);   
-}
-
-.kinkaku
-{
-   background: url(../img/Kinkaku-ji.jpg);
-}
-
-.fushimi
-{
-   background: url(../img/Fushimi-Inari.jpg);
-}
-
-.himeji
-{
-   background: url(../img/Himeji-Castle.jpg);
-}
-
-.byodoin
-{
-   background: url(../img/Byodoin.jpg);
-}
-
-.arashiyama
-{
-   background: url(../img/Arashiyama-Bamboo-Forest.jpg);
-}
-
-.nachi
-{
-   background: url(../img/Nachi-san.jpg);
-}
-
-.torii
-{
-   background: url(../img/torii-gate.jpg);
 }
 
 .caption
@@ -483,6 +399,7 @@ input
 input[placeholder]
 {
    color: var(--darkgrey);
+   font-size: 2rem;
    text-transform: capitalize;
 }
 
