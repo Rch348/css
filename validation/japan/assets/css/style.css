@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 
 :root
 {
@@ -7,11 +8,11 @@
    --dark-logo: #000829;
    --hover-red: #C53135;
    --darkshadow: rgba(0, 0, 0, .6);
-   --white: #FFF;
-   --transparent: rgba(255, 255, 255, .7);
-   --lightgrey: #E9EBED;
-   --shadow: 0 2px 20px rgba(0, 0, 0, .04);
    --darkgrey: #4D5D68;
+   --transparent: rgba(255, 255, 255, .7);
+   --shadow: 0 2px 20px rgba(0, 0, 0, .04);
+   --white: #FFF;
+   --lightgrey: #E9EBED;
 }
 
 *
@@ -47,7 +48,8 @@ a
 h1, h2, h3, h4, h5, h6
 {
    font-weight: 700;
-   line-height: 5.8rem;
+   /* Toujours privilégier un ratio à une taille fixe (1.2 vs 58px ou 5.8rem). */
+   line-height: 1.2;
 }
 
 h2
@@ -59,6 +61,12 @@ h2
 h2 + p
 {
    margin-bottom: 8rem;
+}
+
+img
+{
+   display: block;
+   max-width: 100%;
 }
 
 section
@@ -84,7 +92,7 @@ ul
    /* Les propriétés 'display: inline-block' et 'line-height' combinées permettent de définir la hauteur du conteneur de l'élément tout en augmentant sa surface cliquable et sans se soucier de la hauteur du padding => Très utile ppour les boutons ou items de menu. */
    display: inline-block;
    font-weight: 700;
-   letter-spacing: .2px;
+   /* letter-spacing: .1px; */
    line-height: 6rem;
    padding: 0 3.2rem;
    transition: all .7s ease-out;
@@ -145,10 +153,11 @@ nav
 
 .logo
 {
+   color: var(--dark-logo);
    font-weight: 700;
 }
 
-.dot, .active, header nav div ul li a:hover
+.active, .dot, i, .menu li a:hover
 {
    color: var(--primary-red);
 }
@@ -174,7 +183,7 @@ nav
 
 .menu-icon i
 {
-   background-color: var(--black1);
+   background-color: var(--primary-dark);
    display: block;
    width: 2rem;
    height: 1px;
@@ -189,7 +198,7 @@ nav
 /* ~ : cible un élément enfant ayant le même parent (direct ou non-direct) */
 .menu-burger:checked ~ .menu
 {
-   height: calc(100vh -7rem);
+   height: calc(100vh - 7rem);
    opacity: 1;
 }
 
@@ -270,7 +279,7 @@ h1
    bottom: 3.2rem;
 }
 
-h3
+.trip > div > h3
 {
    color: var(--white);
    font-size: 3.6rem;
@@ -284,128 +293,108 @@ h3
 
 .where
 {
-   min-height: 149.8rem;
    padding: 10rem 0;
 }
 
 .tiles
 {
    flex-wrap: wrap;
+   margin-bottom: 9rem;
 }
 
 .tile
 {
-   color: var(--white);
-   height: 48rem;
-   width: 47.5rem;
+   flex: 0 1 25%;
+
+}
+
+.tile article
+{
+   position: relative;
 }
 
 .caption
 {
-   align-items: center;
-   align-self: self-end;
-   background-color: var(--black3);
+   background-color: var(--darkshadow);
    color: var(--white);
-   flex-direction: column;
-   height: 7.6rem;
-   justify-content: center;
-   letter-spacing: 1.8px;
-   line-height: 2.2rem;
-   max-width: 47.5rem;
+   padding: 1.6rem;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
 }
 
-h4
+.caption h3
 {
+   font-size: 1.8rem;
+   letter-spacing: 2px;
    text-transform: uppercase;
 }
 
-.view-more
+.caption h4
 {
-   justify-content: center;
+   font-size: 1.8rem;
+   font-weight: 400;
+   letter-spacing: 2px;
 }
+
 
 .where > div > a
 {
-   margin: 9rem auto 0;
    text-align: center;
 }
 
 
 
-/* ------ "WE TAKE CARE" ------ */
-
-.care
-{
-   min-height: 56.6rem;
-
-}
+/* ------ SERVICES ------ */
 
 .articles
 {
-   flex-wrap: wrap;
-   gap: 4.1rem;
-   justify-content: center;
+   /* flex-wrap: wrap; */
+   gap: 3.2rem;
+   justify-content: space-between;
 }
 
-.article
+.article > i
 {
-   min-height: 17.2rem;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 44.5rem;
+   font-size: 5rem;
+   margin-bottom: 2.4rem;
 }
 
-.article > img
+.article h3
 {
-   padding-bottom: 2.4rem;
-}
-
-h5
-{
+   font-size: 2rem;
    margin-bottom: 2rem;
-}
-
-.article > p
-{
-   line-height: 2.4rem;
 }
 
 
 
 /* ------ "WIN" ------ */
 
-.win
-{
-   min-height: 48.8rem;
-}
-
 form
 {
    gap: 4rem;
    justify-content: center;
+   /* align-items: center;
+   margin: 0 auto;
+   max-width: 40%; */
 }
 
-input
+/* Pour cibler exclusivement ce champ (de type 'email'). */
+input[type="email"]
 {
    background-color: var(--lightgrey);
    border: none;
-   gap: 4rem;
-   height: 6rem;
-   padding-left: 1.6rem;
-   width: 43.2rem;
-}
-
-input[placeholder]
-{
+   border-radius: 3px;
    color: var(--darkgrey);
    font-size: 2rem;
-   text-transform: capitalize;
+   line-height: 6rem;
+   width: 43.2rem;
+   padding: 0 1.6rem;
 }
 
-form > a
+input[placeholder], .jap
 {
-   width: 15.9rem;
+   text-transform: capitalize;
 }
 
 
@@ -414,7 +403,7 @@ form > a
 
 footer
 {
-   background-color: var(--black2);
+   background-color: var(--primary-dark);
    color: var(--white);
    height: 9rem;
    justify-content: center;
@@ -422,38 +411,14 @@ footer
    align-items: center;
 }
 
-.jap
-{
-   text-transform: capitalize;
-}
-
 
 
 /* ------ MEDIA QUERIES ------ */
 
-/* @media (max-width: 1919px)
+@media (max-width: 879px)
 {
-   .tours, .care, .win
-   {
-      padding: 10rem;
-   }
-}
 
-@media (max-width: 1200px)
-{
-   header
-   {
-      padding: 2rem 10rem;
-   }
-
-   nav
-   {
-      align-items: center;
-   }
-} */
-
-@media (max-width: 849px)
-{
+   /* HEADER */
    .menu-icon
    {
       cursor: pointer;
@@ -464,15 +429,17 @@ footer
    .menu
    {
       align-items: center;
+      background-color: var(--white);
       flex: 1 1 100%;
       flex-direction: column;   
       height: 0; 
       justify-content: center;
       left: 0;
-      /*  Pas de 'display: none;' car l'animation ne fonctionnerait pas => opacity */
+      /*  Pas de 'display: none;' car l'animation ne fonctionnerait pas => Utiliser 'opacity'. */
       opacity: 0;
       position: absolute;
       transition: all .3s ease-in-out;
+      width: 100vw;
    }
 
    .menu li
@@ -481,38 +448,62 @@ footer
       width: 100%;
    }
 
-   /* ul
-   {  
-      gap: 1.8rem;
-   }
+} 
 
-   ul li a, .btn
-   {
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-   }
 
-   .tours, .care, .win
+
+@media (max-width: 579px)
+{
+   h2
    {
-      padding: 3rem;
+      font-size: 3.6rem;
    }
 
    h2 + p
    {
-      margin-bottom: 3rem;
-   }*/
-} 
-
-@media (max-width: 579px)
-{
-   header
-   {
-      height: 12rem;
-      padding: 1.9rem;
+      font-size: 1.8rem;
    }
 
-   .menu
+   .btn
    {
-      flex-wrap: wrap;
+      line-height: 4.8rem;
    }
+
+   /* HERO */
+   .hero article
+   {
+      flex: 0 1 auto;
+      font-size: 1.9rem;
+      max-width: inherit;
+   }
+
+   h1
+   {
+      font-size: 3.9rem;
+   }
+
+   /* TRIPS */
+   .trips .container
+   {
+      gap: 6rem;
+   }
+
+   .trip div h3
+   {
+      font-size: 3.2;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, .6);
+   }
+
+   /* WIN */
+   form
+   {
+      flex-direction: column;
+      max-width: 100%;
+   }
+
+   form input[type="email"]
+   {
+      width: 100%;
+   }
+
 }

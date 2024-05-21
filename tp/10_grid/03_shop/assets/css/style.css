@@ -32,13 +32,23 @@ body
 a
 {
    color: inherit;
+   cursor: pointer;
    text-decoration: none;
 }
 
-h1, h2
+h1, h2, h3, h4
 {
    font-weight: 700;
+   line-height: 1.2;
    margin: 2.7rem 0;
+}
+
+img
+{
+   display: block;
+   height: 100%;
+   object-fit: cover;
+   max-width: 100%;
 }
 
 ul
@@ -59,15 +69,12 @@ ul
 {
    background-color: var(--dark);
    color: var(--white);
-   cursor: pointer;
    display: inline-block;
-   height: 6rem;
-   line-height: 0;
+   line-height: 6.1rem;
    margin: 2.7rem 0;
-   /* padding: 3.2rem 0; */
+   padding: 0 4rem;
    text-align: center;
    text-transform: uppercase;
-   width: 27rem;
 }
 
 .container
@@ -123,9 +130,10 @@ header > nav > a
 
 .hero
 {
-   
+   padding-bottom: 4.4rem;
 }
 
+/* FIL D'ARIANE */
 .hero > div
 {
    border-bottom: .7 solid var(--grey);
@@ -146,6 +154,9 @@ header > nav > a
    color: var(--grey);
 }
 
+/* ARTICLE */
+
+   /* PHOTOS */
 .hero > div > article
 {
    gap: 3.2rem;
@@ -159,12 +170,6 @@ header > nav > a
    height: 61.5rem;
 }
 
-img
-{
-   height: 100%;
-   object-fit: cover;
-   width: 100%;
-}
 
 .ap1
 {
@@ -191,6 +196,7 @@ img
    grid-column: 3 / 4;
 }
 
+   /* DESCRIPTION */
 .description
 {
    max-width: 45.5rem;
@@ -223,8 +229,6 @@ h2
 .btn[value="ajouter au panier"]
 {
 
-   font-size: 1.9rem;
-   text-transform: uppercase;
 }
 
 
@@ -233,5 +237,18 @@ h2
 
 .autres
 {
-   
+   text-transform: capitalize;
+}
+
+
+
+/* ------ FOOTER ------ */
+
+footer
+{
+   background-color: var(--dark);
+   color: var(--white);
+   height: 8rem;
+   text-align: center;
+   text-transform: capitalize;
 }
