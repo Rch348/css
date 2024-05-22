@@ -405,9 +405,9 @@ footer
 {
    background-color: var(--primary-dark);
    color: var(--white);
-   height: 9rem;
+   /* Line-height permet de centrer verticalement le contenu VS height. */
+   line-height: 9rem;
    justify-content: center;
-   line-height: 2.4rem;
    align-items: center;
 }
 
@@ -417,7 +417,6 @@ footer
 
 @media (max-width: 879px)
 {
-
    /* HEADER */
    .menu-icon
    {
