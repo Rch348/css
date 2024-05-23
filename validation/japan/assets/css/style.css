@@ -71,7 +71,7 @@ img
 
 section
 {
-   padding: 10vw 2rem;
+   padding: 6vw 2rem;
    text-align: center;
 }
 
@@ -305,7 +305,6 @@ h1
 .tile
 {
    flex: 0 1 25%;
-
 }
 
 .tile article
@@ -374,8 +373,8 @@ form
 {
    gap: 4rem;
    justify-content: center;
-   /* align-items: center;
-   margin: 0 auto;
+   /* align-items: center; */
+   /* margin: 0 auto;
    max-width: 40%; */
 }
 
@@ -388,8 +387,9 @@ input[type="email"]
    color: var(--darkgrey);
    font-size: 2rem;
    line-height: 6rem;
-   width: 43.2rem;
+   /* margin-right: 4rem; */
    padding: 0 1.6rem;
+   width: 43.2rem;
 }
 
 input[placeholder], .jap
@@ -407,8 +407,7 @@ footer
    color: var(--white);
    /* Line-height permet de centrer verticalement le contenu VS height. */
    line-height: 9rem;
-   justify-content: center;
-   align-items: center;
+   text-align: center;
 }
 
 
@@ -422,6 +421,7 @@ footer
    {
       cursor: pointer;
       display: inline-block;
+      padding: 1.2rem 0 1.2rem 1.2rem;
       z-index: 1;
    }
 
@@ -447,6 +447,30 @@ footer
       width: 100%;
    }
 
+   /* HERO */
+   .hero article
+   {
+      flex: 0 1 auto;
+   }
+
+   /* TRIPS */
+   .trips div
+   {
+      gap: 6rem;
+   }
+
+   /* WHERE */
+   .tile
+   {
+      flex: 0 1 50%;
+   }
+
+   /*  WIN */
+   form
+   {
+      align-items: center;
+      max-width: 100%;
+   }
 } 
 
 
@@ -461,6 +485,11 @@ footer
    h2 + p
    {
       font-size: 1.8rem;
+   }
+
+   selection
+   {
+      padding: 10vw 2rem;
    }
 
    .btn
@@ -489,8 +518,20 @@ footer
 
    .trip div h3
    {
-      font-size: 3.2;
+      font-size: 3.2rem;
       text-shadow: 0 4px 8px rgba(0, 0, 0, .6);
+   }
+
+   /* WHERE */
+   .tile
+   {
+      flex: 0 1 auto;
+   }
+
+   /* SERVICES */
+   .services .articles
+   {
+      flex-wrap: wrap;
    }
 
    /* WIN */

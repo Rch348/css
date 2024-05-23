@@ -35,9 +35,13 @@ body
 a
 {
    color: inherit;
-   cursor: pointer;
-
    text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, h6
+{
+   font-size: 1.2;
+   font-weight: 700;
 }
 
 img
@@ -55,10 +59,137 @@ ul
 
 /* ------ UTILITAIRES ------ */
 
+/* .active, a:hover
+{
+   color: var();
+} */
+
 .btn
 {
+   background-color: var(--red);
+   border-radius: 5rem;
    color: var(--white);
    display: inline-block;
    line-height: 5rem;
    padding: 0 4rem;
+}
+
+.learn-more
+{
+   background-color: var(--darkgrey);
+}
+
+.container
+{
+   margin: 0 auto;
+   max-width: 140rem;
+}
+
+.d-grid
+{
+   display: grid;
+   grid-template: auto / repeat(12, 1fr);
+   gap: 2.4rem;
+}
+
+.col-1
+{
+   grid-column: span 1;
+}
+
+.col-2
+{
+   grid-column: span 2;
+}
+
+.col-3
+{
+   grid-column: span 3;
+}
+
+.col-4
+{
+   grid-column: span 4;
+}
+
+.col-5
+{
+   grid-column: span 5;
+}
+
+.col-6
+{
+   grid-column: span 6;
+}
+
+.col-7
+{
+   grid-column: span 7;
+}
+
+.col-8
+{
+   grid-column: span 8;
+}
+
+
+
+/* ------ HEADER ------ */
+
+header
+{
+   background-color: var(--primary-dark);
+   position: sticky;
+   width: 100%;
+}
+
+header nav
+{
+
+}
+
+.logo
+{
+   color: var(--white);
+   font-size: 2.3rem;
+   font-weight: 700;
+}
+
+/* MENU BURGER */
+.menu-burger
+{
+   color: var(--primary-dark);
+}
+
+.menu-icon i
+{
+   background-color: var(--white);
+   cursor: pointer;
+   display: inline-block;
+   height: 5px;
+   padding: 1.2rem 0 1.2rem 1.2rem;
+   transition: all .3s ease;
+   width: 2.3rem;
+   z-index: 1;
+}
+
+.menu-icon i + i
+{
+   margin: 3px 0;
+}
+
+
+
+/* ------ HERO ------ */
+
+.hero
+{
+   background-color: var(--primary-dark);
+}
+
+h1, .compromise, .hero .btn
+{
+   color: var(--white);
+   margin: 0 auto;
+   max-width: 100%;
 }

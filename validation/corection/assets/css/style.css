@@ -27,7 +27,6 @@ html{
 
 body {
   line-height: 1.5;
-  /* 'antialiased' : Lisse la police au niveau du pixel, le rendu sous-pixel à l'anticrénelage pour le texte clair sur fond sombre le rend + clair. */
   -webkit-font-smoothing: antialiased;
   font-family: "Barlow", sans-serif;
   font-size: 1.6rem;
@@ -44,7 +43,6 @@ input, button, textarea, select {
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-  /* Césure d'un mot et force sa 2ème moitié à retourner à la ligne pour éviter de dépasser de son conteneur. */
   overflow-wrap: break-word;
 }
 
@@ -75,7 +73,7 @@ ul{
 }
 
 section{
-  padding: 10vw 2rem;
+  padding: 6vw 2rem;
   text-align: center;
 }
 
@@ -162,11 +160,9 @@ header nav ul li a{
   margin-top: 6px;
 } 
 
-
 .menu-burger:checked ~ .menu{
   height: calc(100vh - 7rem);
   opacity: 1;
-
 }
 
 .menu-burger:checked + .menu-icon i:nth-child(1){
@@ -205,7 +201,7 @@ header nav ul li a{
 }
 
 .hero-banner article p{
-  font-size: 2.4rem;
+  font-size: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -238,9 +234,13 @@ header nav ul li a{
 }
 
 /* DESTINATION */
-
 .destinations{
   padding: 10rem 0;
+}
+
+.destinations .title, .destinations .sub-title{
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .destinations .blog{
@@ -304,10 +304,11 @@ header nav ul li a{
 
 /* LOTTERY */
 .lottery form{
+  justify-content: center;
   align-items: center;
   max-width: 40%;
   margin: 0 auto;
-  gap: 4rem;
+  /* gap: 4rem; */
 }
 
 .lottery form input[type="email"]{
@@ -321,6 +322,7 @@ header nav ul li a{
   text-transform: capitalize;
   /* margin-right: 4rem; */
   width: 43.2rem;
+  margin-right: 4rem;
 }
 
 .lottery form .btn{
@@ -347,7 +349,65 @@ footer p{
 /* LARGE DEVICE ->  900px à 1199px */
 /* EXTRA LARGE DEVICE ->  1200px  */
 
+@media (max-width: 899px) {
+  
+  /* MENU */
+  .menu-icon{
+    cursor: pointer;
+    display: inline-block;
+    z-index: 1  ;
+    /* padding: haut droite bas gauche */
+    padding: 1.2rem 0 1.2rem 1.2rem;
+
+  }
+
+  .menu {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    flex: 1 1 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    transition: all .4s ease-in-out;
+    width: 100vw;
+    background-color: #fff;
+  }
+
+  .menu li{
+    width: 100%;
+    text-align: center;
+  }
+
+  /* HERO BANNER */
+  .hero-banner article {
+    flex: 0 1 auto;
+  }
+
+  /* TRIPS */
+  .trips .container {
+    justify-content: center;
+    gap: 6rem 0;
+  }
+
+  /* DESTINATION */
+  .destinations .blog .destination {
+    flex: 0 1 50%;
+  }
+
+  /* LOTTERY */
+  .lottery form {
+    max-width: 100%;
+  } 
+
+}
+
 @media (max-width: 599px) {
+
+  section{
+    padding: 10vw 2rem;
+  }
 
   .btn{
     line-height: 4.8rem;
@@ -370,6 +430,7 @@ footer p{
   .hero-banner article h1{
     font-size: 4rem;
   }
+
   .hero-banner article {
     font-size: 1.8rem;
   }
@@ -384,48 +445,27 @@ footer p{
     text-shadow: 0 4px 8px rgba(0, 0, 0, .6);
   }
 
+  /* DESTINATION */
+  .destinations .blog .destination {
+    flex: 0 1 auto;
+  }
+
+  /* SERVICES */
+  .services .container{
+    flex-wrap: wrap;
+  }
+
   /* LOTTERY */
   .lottery form{
-    align-items: center;
     max-width: 100%;
     flex-direction: column;
   }
 
   .lottery form input[type="email"]{
-    
     width: 100%;
+    margin-right: 0;
+    margin-bottom: 4rem;
   }
-
-
-}
-
-@media (max-width: 899px) {
-  
-  .menu-icon{
-    cursor: pointer;
-    display: inline-block;
-    z-index: 1  ;
-  }
-
-  .menu {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-    flex: 1 1 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 0;
-    transition: all .4s ease-in-out;
-    width: 100vw;
-    background-color: #fff;
-  }
-
-  .menu li{
-    width: 100%;
-    text-align: center;
-  }
-
 }
 
 
