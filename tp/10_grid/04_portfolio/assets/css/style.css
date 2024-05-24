@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 
 :root
 {
    --primary-dark: #000;
    --white: #FFF;
-   --red: #F00;
-   --darkgrey: #21423a;
-   --lightgrey: #d6d6d6;
-   --grey: #515c58;
-   --maroon: #471212;
-   --darkred: #910909;
+   --red: #FF1732;
+   --learn-more: #1B2E39;
+   --bluegrey: #4D5C67;
+   --lightgrey: #EBEBEB;
+   --grey: #D6DAE9;
+   --footer: #25323C;
+   --maroon: #3D3139;
+   --darkred: #8D3838;
 }
 
 *
@@ -22,8 +23,9 @@
 
 html
 {
-   font-family: 'Arvo', Arial, sans-serif;
+   font-family: 'Open Sans', Arial, sans-serif;
    font-size: 62.5%;
+   font-weight: 400;
    line-height: 1.5;
 }
 
@@ -38,16 +40,27 @@ a
    text-decoration: none;
 }
 
-p, h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6
 {
    font-size: 1.2;
-   font-weight: 700;
+   text-transform: capitalize;
+}
+
+h1, h2
+{
+   font-family: 'Arvo', sans-serif;
 }
 
 img
 {
    display: block;
+   object-fit: cover;
    width: 100%;
+}
+
+section
+{
+   text-align: center;
 }
 
 ul
@@ -70,26 +83,32 @@ ul
    border-radius: 5rem;
    color: var(--white);
    display: inline-block;
-   line-height: 5rem;
+   font-family: 'Arvo', sans-serif;
+   line-height: 3.6rem;
    padding: 0 4rem;
 }
 
 .learn-more
 {
-   background-color: var(--darkgrey);
+   background-color: var(--learn-more);
 }
 
 .container
 {
    margin: 0 auto;
-   max-width: 140rem;
+   max-width: 102rem;
+}
+
+.d-flex
+{
+   display: flex;
 }
 
 .d-grid
 {
    display: grid;
    grid-template: auto / repeat(12, 1fr);
-   gap: 2.4rem;
+   gap: 2rem;
 }
 
 .col-1
@@ -138,44 +157,40 @@ ul
 
 header
 {
+   line-height: 11rem;
    background-color: var(--primary-dark);
-   position: sticky;
+   padding: 0 5rem;
+   position: fixed;
    width: 100%;
+}
+
+.d-grid2
+{
+   display: grid;
+   grid-template-rows: auto;
+   grid-template-columns: repeat(12, 1fr);
 }
 
 header nav
 {
-
+   align-items: center;
+   justify-content: space-between;
+   color: var(--white);
 }
 
 .logo
 {
    color: var(--white);
-   font-size: 2.3rem;
+   font-family: 'Arvo', sans-serif;
+   font-size: 2.7rem;
    font-weight: 700;
+   grid-column: 1;
 }
 
-/* MENU BURGER */
-.menu-burger
+.fa-bars
 {
-   color: var(--primary-dark);
-}
-
-.menu-icon i
-{
-   background-color: var(--white);
-   cursor: pointer;
-   display: inline-block;
-   height: 5px;
-   padding: 1.2rem 0 1.2rem 1.2rem;
-   transition: all .3s ease;
-   width: 2.3rem;
-   z-index: 1;
-}
-
-.menu-icon i + i
-{
-   margin: 3px 0;
+   font-size: 3.8rem;
+   grid-column: 13;
 }
 
 
@@ -184,12 +199,86 @@ header nav
 
 .hero
 {
+   height: 100vh;
    background-color: var(--primary-dark);
 }
 
-h1, .compromise, .hero .btn
+.hd
+{
+   padding: 39rem 0 21rem;
+}
+
+.hd-p
 {
    color: var(--white);
-   margin: 0 auto;
-   max-width: 100%;
+   font-size: 4.1rem;
+   font-weight: 400;
+   grid-column: 4 / span 6;
+   line-height: 7rem;
+   margin-bottom: 6rem;
+   text-align: center;
+}
+
+.tour, .learn-more
+{
+   font-size: 1.2rem;
+   /* width: 18rem; */
+}
+
+.tour
+{
+   grid-column: 4 / span 3;
+
+}
+
+.learn-more
+{
+   grid-column: 7 / span 3;
+}
+
+.fa-chevron-down
+{
+   color: var(--white);
+   font-size: 3.9rem;
+   font-weight: 900;
+}
+
+
+
+/* ------ SERVICES ------ */
+
+.services
+{
+   justify-content: space-evenly;
+   padding: 9rem;
+   text-align: center;
+}
+
+.services article
+{
+   gap: 5rem;
+}
+
+.services article i
+{
+   font-size: 2.9rem;
+   margin-bottom: 4.8rem;
+}
+
+.
+
+
+
+/* ------ CAPTURE ------ */
+
+.capture
+{
+   grid-column: 1 / 6;
+   padding: 9rem 0;
+}
+
+.darkred
+{
+   background-color: var(--darkred);
+   grid-column: 6 / 13;
 }

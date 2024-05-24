@@ -87,10 +87,12 @@ ul
 .btn
 {
    background-color: var(--primary-red);
+   border: none;
    border-radius: 3px;
    color: var(--white);
    /* Les propriétés 'display: inline-block' et 'line-height' combinées permettent de définir la hauteur du conteneur de l'élément tout en augmentant sa surface cliquable et sans se soucier de la hauteur du padding => Très utile ppour les boutons ou items de menu. */
    display: inline-block;
+   font-size: 2rem;
    font-weight: 700;
    /* letter-spacing: .1px; */
    line-height: 6rem;
@@ -348,7 +350,6 @@ h1
 
 .articles
 {
-   /* flex-wrap: wrap; */
    gap: 3.2rem;
    justify-content: space-between;
 }
@@ -373,9 +374,6 @@ form
 {
    gap: 4rem;
    justify-content: center;
-   /* align-items: center; */
-   /* margin: 0 auto;
-   max-width: 40%; */
 }
 
 /* Pour cibler exclusivement ce champ (de type 'email'). */
@@ -387,7 +385,6 @@ input[type="email"]
    color: var(--darkgrey);
    font-size: 2rem;
    line-height: 6rem;
-   /* margin-right: 4rem; */
    padding: 0 1.6rem;
    width: 43.2rem;
 }
@@ -469,7 +466,6 @@ footer
    form
    {
       align-items: center;
-      max-width: 100%;
    }
 } 
 
@@ -487,7 +483,7 @@ footer
       font-size: 1.8rem;
    }
 
-   selection
+   section
    {
       padding: 10vw 2rem;
    }
@@ -523,9 +519,15 @@ footer
    }
 
    /* WHERE */
+   .tiles
+   {
+      justify-content: center;
+   }
+
    .tile
    {
       flex: 0 1 auto;
+
    }
 
    /* SERVICES */
@@ -538,12 +540,6 @@ footer
    form
    {
       flex-direction: column;
-      max-width: 100%;
-   }
-
-   form input[type="email"]
-   {
-      width: 100%;
    }
 
 }
