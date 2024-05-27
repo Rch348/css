@@ -11,7 +11,9 @@
    --grey: #D6DAE9;
    --footer: #25323C;
    --maroon: #3D3139;
+   --darkwhite: #f0eded;
    --darkred: #8D3838;
+
 }
 
 *
@@ -43,13 +45,23 @@ a
 h1, h2, h3, h4, h5, h6
 {
    font-size: 1.2;
-   /* font-weight: 400; */
    text-transform: capitalize;
 }
 
-h1, h2
+h1, h2, h3, h4
 {
    font-family: 'Arvo', sans-serif;
+}
+
+h2, h3
+{
+   font-weight: 400;
+}
+
+h2
+{
+   font-size: 4.1rem;
+   line-height: 7;
 }
 
 img
@@ -57,6 +69,12 @@ img
    display: block;
    object-fit: cover;
    width: 100%;
+}
+
+p
+{
+   font-size: 1.25rem;
+   line-height: 2.5rem;
 }
 
 section
@@ -161,14 +179,19 @@ ul
    grid-column: span 8;
 }
 
-.col-21
+.col-10
 {
-   grid-column: span 21;
+   grid-column: span 10;
 }
 
-.col-27
+.col-22
 {
-   grid-column: span 27;
+   grid-column: span 22;
+}
+
+.col-26
+{
+   grid-column: span 26;
 }
 
 
@@ -212,7 +235,6 @@ header nav
 .hero
 {
    height: 105vh;
-   /* margin-top: 11rme; */
    background-color: var(--primary-dark);
 }
 
@@ -221,10 +243,9 @@ header nav
    padding: 39rem 0 21rem;
 }
 
-.hd-p
+.hd h2
 {
    color: var(--white);
-   font-size: 4.1rem;
    font-weight: 400;
    grid-column: 18 / span 14;
    line-height: 7rem;
@@ -241,7 +262,6 @@ header nav
 .tour
 {
    grid-column: 20 / span 5;
-
 }
 
 .learn-more
@@ -262,7 +282,6 @@ header nav
 
 .services
 {
-   /* justify-content: space-between; */
    padding: 9rem 0 12rem;
    text-align: center;
 }
@@ -278,17 +297,11 @@ header nav
    margin-bottom: 4.1rem;
 }
 
-.services article h4
+.services article h5
 {
    font-size: 1.8rem;
    font-weight: 600;
    margin-bottom: 3.1rem;
-}
-
-.services article p
-{
-   font-size: 1.25rem;
-   line-height: 2.5rem;
 }
 
 
@@ -303,12 +316,12 @@ header nav
 .capture
 {
    background-color: var(--maroon);
-   color: var(--white);
-   padding: 10rem 8.6rem 8.7rem 40rem;
+   color: var(--darkwhite);
+   padding: 8.6rem 8.6rem 8.6rem 40rem;
    text-align: start;
 }
 
-.capture h2
+.capture h4
 {
    font-size: 2.3rem;
    font-weight: 500;
@@ -316,21 +329,136 @@ header nav
    margin-bottom: 3.4rem;
 }
 
+.capture > p
+{
+   margin-bottom: 3.1rem;
+}
+
+.boxes
+{
+   gap: 2.9rem;
+}
+
+.box
+{
+   border: 1px solid ;
+   font-weight: 300;
+   justify-content: center;
+   padding: 3.1rem 2.4rem 2.9rem;
+   text-transform: capitalize;  
+   width: 17.5rem;
+}
+
+.box div > p:nth-child(1)
+{
+   margin-bottom: 2.7rem;
+}
+
+.box div p
+{
+   font-size: 2.15rem;
+}
+
 .shops
 {
-   border: 1px solid var(--white);
-   padding: 3.7rem 5rem;
-   text-transform: capitalize;
+   text-align: center;
 }
 
 .branches
 {
-   border: 1px solid var(--white);
-   padding: 3.7rem 5rem;
-   text-transform: capitalize;   
+   text-align: center;
 }
 
 .darkred
 {
    background-color: var(--darkred);
+}
+
+
+
+/* ------ REMEMBER ------ */
+
+.remember
+{
+   gap: 4.9rem;
+   padding: 8.6rem 0 10rem;
+   text-align: start;
+}
+
+.rem-txt h3
+{
+   font-size: 3.4rem;
+   line-height: 7rem;
+   margin-bottom: 3.4rem;
+}
+
+.rem-txt p
+{
+   font-size: 1.21rem;
+   margin-bottom: 2rem;
+}
+
+.rem-txt input
+{
+   margin: 3rem 0;
+}
+
+.carre
+{
+   width: 44.6rem;
+}
+
+
+
+/* ------ AVATAR ------ */
+
+.avatar
+{
+   gap: 0;
+}
+
+.avatar .col-22
+{
+   background-color: var(--grey);
+   padding-top: 3rem;
+}
+
+.avatar div img
+{
+   grid-column: 7 / span 4;
+}
+
+.avatar .col-26
+{
+   background-color: var(--bluegrey);
+   color: var(--darkwhite);
+   padding: 9rem 27rem 14rem 8.4rem;
+   text-align: left;
+}
+
+.honestly, .name
+{
+   font-size: 2.3rem;
+   line-height: 5.4rem;
+}
+
+.honestly
+{
+   font-style: italic;
+   font-weight: 300;
+   margin-bottom: 3.4rem;
+}
+
+.job
+{
+   line-height: 4.1rem;
+}
+
+
+
+/* ------ BLOCS ------ */
+
+.blocs
+{
+   padding: 12rem 0 15rem;
 }
