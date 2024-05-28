@@ -2,7 +2,7 @@
 
 :root
 {
-   --primary-dark: #000;
+   --primary-dark: #090B19;
    --white: #FFF;
    --red: #FF1732;
    --learn-more: #1B2E39;
@@ -28,6 +28,7 @@ html
    font-family: 'Open Sans', Arial, sans-serif;
    font-size: 62.5%;
    font-weight: 400;
+   letter-spacing: .1px;
    line-height: 1.5;
 }
 
@@ -39,10 +40,11 @@ body
 a
 {
    color: inherit;
+   display: inline-block;
    text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6
+h1, h3, h4, h5, h6
 {
    font-size: 1.2;
    text-transform: capitalize;
@@ -61,7 +63,6 @@ h2, h3
 h2
 {
    font-size: 4.1rem;
-   line-height: 7;
 }
 
 img
@@ -73,7 +74,7 @@ img
 
 p
 {
-   font-size: 1.25rem;
+   font-size: 1.23rem;
    line-height: 2.5rem;
 }
 
@@ -104,6 +105,7 @@ ul
    color: var(--white);
    display: inline-block;
    font-family: 'Arvo', sans-serif;
+   font-size: 1.6rem;
    line-height: 3.6rem;
    padding: 0 4rem;
 }
@@ -179,9 +181,24 @@ ul
    grid-column: span 8;
 }
 
+.col-9
+{
+   grid-column: span 9;
+}
+
 .col-10
 {
    grid-column: span 10;
+}
+
+.col-16
+{
+   grid-column: span 16;
+}
+
+.col-19
+{
+   grid-column: span 19;
 }
 
 .col-22
@@ -202,8 +219,8 @@ header
 {
    line-height: 11rem;
    background-color: var(--primary-dark);
-   position: fixed;
-   width: 100%;
+   /* position: fixed; */
+   /* width: 100%; */
 }
 
 header nav
@@ -213,13 +230,18 @@ header nav
    color: var(--white);
 }
 
-.logo
+#logo
 {
    color: var(--white);
    font-family: 'Arvo', sans-serif;
    font-size: 2.7rem;
    font-weight: 700;
    grid-column: 3 / 10;
+}
+
+.hd h2
+{
+   text-transform: capitalize;
 }
 
 .fa-bars
@@ -240,7 +262,8 @@ header nav
 
 .hd
 {
-   padding: 39rem 0 21rem;
+   /* padding: 39rem 0 21rem; */
+   padding: 27rem 0 21rem;
 }
 
 .hd h2
@@ -398,9 +421,25 @@ header nav
    margin-bottom: 2rem;
 }
 
-.rem-txt input
+.rem-txt a
 {
+   align-items: center;
+   display: inline-block;
+   /* gap: 10rem; */
+   justify-content: space-between;
+   line-height: 3.6rem;
    margin: 3rem 0;
+   /* width: 20rem; */
+}
+
+.rem-txt a p
+{
+   margin: 0;
+}
+
+.fa-arrow-right
+{
+   font-size: 1.6rem;
 }
 
 .carre
@@ -420,7 +459,7 @@ header nav
 .avatar .col-22
 {
    background-color: var(--grey);
-   padding-top: 3rem;
+   padding-top: 3.9rem;
 }
 
 .avatar div img
@@ -432,7 +471,7 @@ header nav
 {
    background-color: var(--bluegrey);
    color: var(--darkwhite);
-   padding: 9rem 27rem 14rem 8.4rem;
+   padding: 9rem 27rem 14rem 8.7rem;
    text-align: left;
 }
 
@@ -460,5 +499,177 @@ header nav
 
 .blocs
 {
+   background-color: var(--lightgrey);
    padding: 12rem 0 15rem;
+}
+
+.d-grid3
+{
+   display: grid;
+   grid-template-rows: repeat(34, 11);
+   grid-template-columns: repeat(12, 1fr);
+   gap: 32px;
+}
+
+.bloc-1
+{
+   grid-row: 1 / 8;
+   grid-column: 1 / span 8;
+}
+
+.bloc-2
+{
+   grid-row: 1 / 15;
+   grid-column: 9 / span 4;
+}
+
+.bloc-3
+{
+   grid-row: 8 / 19;
+   grid-column: 1 / span 4;
+}
+
+.bloc-4
+{
+   grid-row: 8 / 17;
+   grid-column: 5 / span 4;
+}
+
+.bloc-5
+{
+   grid-row: 15 / 25;
+   grid-column: 9 /span 4;
+   align-self: baseline;
+   /* row-gap: 32px; */
+}
+
+.bloc-6
+{
+   grid-row: 17 / 25;
+   grid-column: 5 / span 4;
+}
+
+.bloc-7
+{
+   align-self: end;
+   grid-row: 19 / 34;
+   grid-column: 1 / span 4;
+}
+
+.bloc-8
+{
+   grid-row: 25 / 34;
+   grid-column: 5 / span 8;
+}
+
+
+
+/* ------ BRANDS ------ */
+
+.brands
+{
+   padding: 5rem 0 6rem;
+}
+
+.brands div
+{
+   justify-content: space-between;
+}
+
+.brands div img
+{
+   object-fit: contain;
+   width: 8rem;
+}
+
+
+
+/* ------ COMMERCE ------ */
+
+.commerce
+{
+   background-color: var(--primary-dark);
+   color: var(--darkwhite);
+   padding: 9.7rem 0 10.1rem;
+}
+
+.commerce article
+{
+   padding-right: 1.8rem;
+   text-align: start;
+}
+
+.commerce article h2
+{
+   line-height: 6rem;
+}
+
+.commerce article p
+{
+   text-align: justify;
+}
+
+.subscribe
+{
+   grid-column: 1;
+   width: 21.9rem;
+}
+
+
+
+/* ------ FOOTER ------ */
+
+footer
+{
+   background-color: var(--footer);
+   color: var(--white);
+   /* padding: 2.7rem 0 3.7rem; */
+}
+
+footer div
+{
+   align-items: center;
+   justify-content: space-between;
+}
+
+footer div a
+{
+   line-height: 5rem;
+   padding: 4rem 0;
+}
+
+.logo-footer
+{
+   font-size: 2.1rem;
+   grid-column: 1;
+}
+
+.facebook
+{
+   grid-column: 8;
+   width: 1rem;
+}
+
+.twitter
+{
+   /* grid-column: 9; */
+   width: 2.3rem;
+}
+
+.youtube
+{
+   /* grid-column: 10; */
+   width: 2.7rem;
+}
+
+.tumblr
+{
+   /* grid-column: 11; */
+   width: 1.3rem;
+}
+
+.dribble
+{
+   /* grid-column: 12; */
+   width: 2rem;
 }
