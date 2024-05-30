@@ -423,23 +423,15 @@ header nav
 
 .rem-txt a
 {
-   align-items: center;
-   display: inline-block;
-   /* gap: 10rem; */
-   justify-content: space-between;
    line-height: 3.6rem;
-   margin: 3rem 0;
-   /* width: 20rem; */
-}
-
-.rem-txt a p
-{
-   margin: 0;
+   padding-left: 3.5rem;
+   text-align: center;
 }
 
 .fa-arrow-right
 {
-   font-size: 1.6rem;
+   font-size: 1.2rem;
+   padding-left: 1.2rem;
 }
 
 .carre
@@ -539,12 +531,13 @@ header nav
 {
    grid-row: 15 / 25;
    grid-column: 9 /span 4;
-   align-self: baseline;
+   /* align-self: baseline; */
    /* row-gap: 32px; */
 }
 
 .bloc-6
 {
+   align-self: stretch;
    grid-row: 17 / 25;
    grid-column: 5 / span 4;
 }
@@ -640,7 +633,9 @@ footer div a
 
 .logo-footer
 {
-   font-size: 2.1rem;
+   font-family: 'Arvo', sans-serif;
+   font-size: 4.1rem;
+   font-weight: 700;
    grid-column: 1;
 }
 
