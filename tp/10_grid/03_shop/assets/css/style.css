@@ -30,7 +30,6 @@ body
 a
 {
    color: inherit;
-   cursor: pointer;
    text-decoration: none;
 }
 
@@ -90,7 +89,42 @@ ul
    display: grid;
    grid-template-rows: auto;
    grid-template-columns: repeat(12, 1fr);
-   /* gap: 2.4rem; */
+   gap: 2.4rem;
+}
+
+.col-3
+{
+   grid-column: span 3;
+}
+
+.col-4
+{
+   grid-column: span 4;
+}
+
+.col-5
+{
+   grid-column: span 5;
+}
+
+.col-6
+{
+   grid-column: span 6;
+}
+
+.col-8
+{
+   grid-column: span 8;
+}
+
+.col-10
+{
+   grid-column: span 10;
+}
+
+.col-12
+{
+   grid-column: span 12;
 }
 
 
@@ -99,8 +133,9 @@ ul
 
 header
 {
+   background-color: var(--white);
    border-bottom: .7px solid var(--grey);
-   padding: 2.9rem 0;
+   position: fixed;
    width: 100%;
 }
 
@@ -135,18 +170,25 @@ header nav ul li a
 
 /* ------ HERO ------ */
 
+.hero
+{
+   padding-top: 8rem;
+}
 /* FIL D'ARIANE */
 
-.hero > div > p
+.fil-ariane
+{
+   margin: 2.4rem 0 3.4rem;
+}
+
+.fil-ariane li a
 {
    color: var(--darkgrey);
    font-size: 1.6rem;
-   margin-bottom: 3.4rem;
-   margin-top: 2.4rem;
    text-transform: uppercase;
 }
 
-.hero > div > p > span
+.fil-ariane span
 {
    color: var(--grey);
 }
@@ -156,18 +198,18 @@ header nav ul li a
    /* PHOTOS */
 .photos
 {
-   gap: 1.5rem;
-   grid-template-columns: repeat(3, 1fr);
+
+   /* grid-template-columns: repeat(3, 1fr); */
    margin-bottom: 4.5rem;
    min-width: 64.8rem;
 }
 
 
-.ap1
+/* .ap1
 {
    grid-row: 1 / 2;
    grid-column: 1 / 4;
-}
+} */
 
 /* .ap2
 {
@@ -282,4 +324,13 @@ footer
    line-height: 8rem;
    text-align: center;
    text-transform: capitalize;
+}
+
+
+
+/* ------ RESPONSIVE ------ */
+
+@media (max-width: 992px)
+{
+
 }
