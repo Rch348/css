@@ -68,7 +68,7 @@ h2
 img
 {
    display: block;
-   object-fit: cover;
+   /* object-fit: cover; */
    width: 100%;
 }
 
@@ -256,7 +256,7 @@ header nav
 
 .hero
 {
-   height: 105vh;
+   height: 100vh;
    background-color: var(--primary-dark);
 }
 
@@ -395,6 +395,7 @@ header nav
 .darkred
 {
    background-color: var(--darkred);
+   flex: 1 1 100%;
 }
 
 
@@ -667,4 +668,27 @@ footer div a
 {
    /* grid-column: 12; */
    width: 2rem;
+}
+
+
+
+/* ------ RESPONSIVE ------ */
+
+@media (max-width: 1679px)
+{
+   .stats, .avatar
+   {
+      display: flex;
+      flex-wrap: wrap;
+   }
+
+   .avatar div
+   {
+      flex: 1 1 100%;
+   }
+}
+
+@media (max-width: 998px)
+{
+
 }

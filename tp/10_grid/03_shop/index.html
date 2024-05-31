@@ -12,11 +12,20 @@
    <!-- HEADER -->
    <header>
 
-      <nav class="container d-flex">
+      <nav class="head-nav container d-grid">
 
-         <a href="#" class="logo">shop</a>
+         <a href="index.html" class="logo col-2">shop</a>
 
-         <ul class="d-flex">
+         <!-- MENU BURGER -->
+         <input type="checkbox" id="menu-burger">
+         <label for="menu-burger" class="menu-icon col-10">
+            <i></i>
+            <i></i>
+            <i></i>
+         </label>
+         <!-- FIN MENU BURGER -->
+
+         <ul class="menu col-10 d-flex">
             <li><a href="produits.html">Nos produits</a></li>
             <li><a href="blog.php">À propos</a></li>
             <li><a href="compte.php">Mon compte</a></li>
@@ -31,22 +40,27 @@
    <section class="hero">
 
       <nav class="container d-grid">
+
          <ul class="fil-ariane col-12 d-flex">
-            <li class="fil-item"><a href="">accueil</a></li>  
-            <li class="fil-item"><a href="">audio</a> </li>
-            <li class="fil-item active"><a href="#" class="">air pods</a></li>
+            <li class="fil-item"><a href="index.html">accueil</a></li>  
+            <li class="fil-item"><a href="audio.html">audio</a> </li>
+            <li class="fil-item"><a href="index.html" class="active">air pods</a></li>
          </ul>
+
       </nav>
 
-      <article class="container d-grid">
+      <article class="container d-grid bord">
 
          <div class="photos col-7">
+
             <a href="assets/img/airpods-1.png" class="ap1"><img src="assets/img/airpods-1.png" alt="photo air pods"></a>
+
             <ul class="list-img d-flex">
-               <li><a href="assets/img/airpods-2.png" class="ap2 col-2"><img src="assets/img/airpods-2.png" alt="photo air pods"></a></li>
-               <li><a href="assets/img/airpods-3.png" class="ap3"><img src="assets/img/airpods-3.png" alt="photo air pods et iphone"></a></li>
-               <li><a href="assets/img/airpods-4.png" class="ap4"><img src="assets/img/airpods-4.png" alt="photo air pods et leur réceptacle"></a></li>
+               <li><a href="assets/img/airpods-2.png"><img src="assets/img/airpods-2.png" alt="photo air pods"></a></li>
+               <li><a href="assets/img/airpods-3.png"><img src="assets/img/airpods-3.png" alt="photo air pods et iphone"></a></li>
+               <li><a href="assets/img/airpods-4.png"><img src="assets/img/airpods-4.png" alt="photo air pods et leur réceptacle"></a></li>
             </ul>
+
          </div>
 
          <div class="description col-5">
@@ -55,54 +69,52 @@
                <h1>Air Pods</h1>
                <p>179,00 €</p>
             </div>
+
             <div class="paragraphes">
                <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis magnam qui quaerat, numquam necessitatibus ut. Voluptatum ullam</p>
                <p class="p2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit hic, expedita obcaecati, ullam odio temporibus quaerat sequi aliquam repudiandae earum at dolor nam provident eos porro suscipit atque aliquid repellat voluptatum necessitatibus illum ipsa! Id.</p>
             </div>
+
             <input type="button" name="panier" value="ajouter au panier" class="btn">
 
          </div>
  
       </article>
 
-   </section class="bord">
+   </section >
 
 
 
    <!-- SINON -->
-   <section class="sinon">
+   <section class="autres">
 
-      <div class="container">
+      <div class="container d-grid">
 
-         <h2>D'autres ont également consulté</h2>
+         <h2 class="col-12">D'autres ont également consulté</h2>
    
-         <div class="autres d-grid">
-   
-            <article class="autre">
-               <a href="shop.fr/casque.html">
-                  <img src="assets/img/casque.png" alt="casque">
-                  <h3>casque</h3>
-                  <p>299,00 €</p>
-               </a>
-            </article>
-   
-            <article class="autre">
-               <a href="shop.fr/enceinte.html">
-                  <img src="assets/img/enceinte.png" alt="enceinte">
-                  <h3>enceinte</h3>
-                  <p>379,00 €</p>
-               </a>
-            </article>
-   
-            <article class="autre">
-               <a href="shop.fr/casque.html">
-                  <img src="assets/img/montre.png" alt="montre">
-                  <h3>montre</h3>
-                  <p>289,00 €</p>
-               </a>
-            </article>
-   
-         </div>
+         <article class="autre col-4">
+            <a href="shop.fr/casque.html">
+               <img src="assets/img/casque.png" alt="casque">
+               <h3>casque</h3>
+               <p>299,00 €</p>
+            </a>
+         </article>
+
+         <article class="autre col-4">
+            <a href="shop.fr/enceinte.html">
+               <img src="assets/img/enceinte.png" alt="enceinte">
+               <h3>enceinte</h3>
+               <p>379,00 €</p>
+            </a>
+         </article>
+
+         <article class="autre col-4">
+            <a href="shop.fr/casque.html">
+               <img src="assets/img/montre.png" alt="montre">
+               <h3>montre</h3>
+               <p>289,00 €</p>
+            </a>
+         </article>
 
       </div>
 

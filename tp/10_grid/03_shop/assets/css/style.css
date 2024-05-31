@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root
 {
-   --dark: #000629;
-   --darkgrey: #c0c0c0; 
-   --grey: #e0e0e0;
+   --dark: #1f1f1f;
+   --grey: #a1a1a1; 
+   --lightgrey: #e0e0e0;
    --white: #fff;
 }
 
@@ -33,7 +33,7 @@ body
 
 a
 {
-   color: var(--darkgrey);
+   color: inherit;
    text-decoration: none;
 }
 
@@ -46,7 +46,6 @@ h1, h2, h3, h4
 img
 {
    display: block;
-   /* object-fit: cover; */
    width: 100%;
 }
 
@@ -61,15 +60,18 @@ ul
 
 .active, a:hover
 {
-   color: var(--dark);
+   /* !important : placé en fin de valeur de propriété, surcharge les autres règles css en rendant celle-ci prioritaire. */
+   color: var(--dark)!important;
 }
 
 .btn
 {
    background-color: var(--dark);
    color: var(--white);
+   cursor: pointer;
    display: inline-block;
-   font-size: 2rem;
+   font-size: 1.8rem;
+   letter-spacing: .7px;
    line-height: 6.1rem;
    padding: 0 4rem;
    text-align: center;
@@ -80,7 +82,7 @@ ul
 {
    margin: 0 auto;
    max-width: 114rem;
-   padding: 0 2rem;
+   padding: 0 2.9rem;
 }
 
 .d-flex
@@ -96,9 +98,9 @@ ul
    gap: 2.4rem;
 }
 
-.col-3
+.col-2
 {
-   grid-column: span 3;
+   grid-column: span 2;
 }
 
 .col-4
@@ -109,11 +111,6 @@ ul
 .col-5
 {
    grid-column: span 5;
-}
-
-.col-6
-{
-   grid-column: span 6;
 }
 
 .col-7
@@ -143,7 +140,7 @@ ul
 header
 {
    background-color: var(--white);
-   border-bottom: .7px solid var(--grey);
+   border-bottom: .7px solid var(--lightgrey);
    position: fixed;
    width: 100%;
 }
@@ -156,24 +153,68 @@ header > nav
 
 .logo
 {
-   color: var(--dark);
    font-size: 2rem;
    font-weight: 700;
    letter-spacing: .7px;
    line-height: 8rem;
 }
 
-header > nav ul
+.menu
 {
-   color: var(--darkgrey);
-   font-weight: 500;
+   color: var(--grey);
    gap: 2.4rem;
+   justify-content: end;
 }
 
-header nav ul li a
+.menu li a
 {
    display: inline-block;
-   font-size: 2rem;
+   font-size: 1.8rem;
+   line-height: 8rem;
+}
+
+/* MENU BURGER */
+#menu-burger, .menu-icon
+{
+   display: none;
+   justify-self: end;
+}
+
+.menu-icon i
+{
+   display: block;
+   width: 20px;
+   height: 1px;
+   background-color: var(--dark);
+   transition: transform .3s ease;
+}
+
+/* Le + sélectionne l'élément b (ici, <i>) suivant immédiatemment l'élément a (ici, un autre <i>) et uniquement celui-ci. */
+.menu-icon i + i
+{
+   margin-top: 6px;
+}
+
+/* Le ~ sélectionne l'(ou les) élément(s) (ici, celui avec la classe menu) suivant immédiatement OU NON un élément (ici, celui avec l'id menu-burger) situés au même niveau d'imbrication (ayant le même parent). */
+#menu-burger:checked ~ .menu
+{
+   height: calc(100vh - 8rem);
+   opacity: 1;
+}
+
+#menu-burger:checked + .menu-icon i:nth-child(1)
+{
+   transform: translateY(7px) rotate(45deg);
+}
+
+#menu-burger:checked + .menu-icon i:nth-child(2)
+{
+   opacity: 0;
+}
+
+#menu-burger:checked + .menu-icon i:nth-child(3)
+{
+   transform: translateY(-7px) rotate(-45deg);
 }
 
 
@@ -184,73 +225,61 @@ header nav ul li a
 {
    padding-top: 8rem;
 }
-/* FIL D'ARIANE */
 
+
+/* FIL D'ARIANE */
 .fil-ariane
 {
    margin: 2.4rem 0 3.4rem;
 }
 
-.fil-ariane li a
+.fil-item a
 {
-   color: var(--darkgrey);
+   color: var(--grey);
    font-size: 1.4rem;
+   letter-spacing: .7px;
    text-transform: uppercase;
+}
+
+.fil-item a:active
+{
+   color: var(--dark);
 }
 
 .fil-item + .fil-item::before
 {
-   content: " / ";
-   color: var(--grey);
+   content: "/";
+   color: var(--lightgrey);
    display: inline-block;
    padding: 0 .9rem;
 }
 
+
 /* ARTICLE */
 
    /* PHOTOS */
-.photos
+.list-img
 {
-
-   /* grid-template-columns: repeat(3, 1fr); */
-   margin-bottom: 4.5rem;
-   min-width: 64.8rem;
+   gap: 1.2rem;
+   margin-top: 1.5rem;
 }
 
-
-/* .ap1
+/* Pour autoriser à grandir les 3 images en dessous de la principale. */
+.list-img li
 {
-   grid-row: 1 / 2;
-   grid-column: 1 / 4;
-} */
+   flex: 1 1 auto;
+}
 
-/* .ap2
-{
-   grid-row: 2 / 3;
-   grid-column: 1 / 2;
-} */
-
-/* .ap3
-{
-   grid-row: 2 / 3;
-   grid-column: 2 / 3;
-} */
-
-/* .ap4
-{
-   grid-row: 2 / 3;
-   grid-column: 3 / 4;
-} */
 
    /* DESCRIPTION */
 .description
 {
-   margin-left: 3.2rem;
+   margin-left: 1.4rem;
 }
 
 .heading
 {
-   margin: 3.3rem 0;
+   margin: 2.7rem 0;
 }
 
 .heading h1
@@ -267,63 +296,60 @@ header nav ul li a
 
 .paragraphes
 {
-   border-top: .7px solid var(--grey);
-   padding: 3.3rem 0 3rem;
+   border-top: .7px solid var(--lightgrey);
+   padding: 3.1rem 0 3rem;
    text-transform: capitalize;
 }
 
 .p1
 {
-   padding-bottom: 1.9rem;
+   padding-bottom: 1.8rem;
 }
 
 .p1, .p2
 {
-   /* font-weight: 500; */
-   line-height: 2.2rem;
+   line-height: 2.1rem;
 }
-
-/* .description > h3::after
-{
-   content: "";
-   border: .7px solid var(--grey);
-   transform: rotate(90deg) translateY(7px);
-} */
 
 .bord
 {
-   height: .1px;
-   background-color: var(--grey);
-   margin: 0 auto;
-   box-shadow: 0 0 .3px;
-   width: 126rem;
+   border-bottom: .7px solid var(--lightgrey);
+   padding-bottom: 4.4rem;
 }
+
+
 
 /* ------ SINON ------ */
 
-.sinon div h2
+.autres div
 {
-   margin: 5rem 0;
+   margin-bottom: 6rem;
 }
 
-.autres
+.autres div h2
 {
-   gap: 3.2rem;
-   grid-template: 1fr / repeat(3, 1fr);
+   margin: 4.6rem 0;
+   font-size: 3.3rem;
+}
+
+.autre
+{
+   column-gap: 3.2rem;
    text-transform: capitalize;
 }
 
 .autre a h3
 {
-   font-size: 2.7rem;
+   font-size: 2.4rem;
    font-weight: 400;
-   margin-bottom: 2rem;
+   margin-bottom: 1rem;
    margin-top: 2.7rem;
 }
 
 .autre a p
 {
-   padding-bottom: 8rem;
+   font-size: 1.8rem;
+   margin-bottom: 1.8rem;
 }
 
 
@@ -345,5 +371,43 @@ footer
 
 @media (max-width: 992px)
 {
+   .col-4, .col-5, .col-7
+   {
+      grid-column: span 12;
+   }
+}
 
+@media (max-width: 768px)
+{
+   /* Dans un même niveau de hiérarchie, le sélecteur de classe sera toujours plus précis qu'un sélecteur de type (de balise). */
+   /* header nav */
+   .head-nav
+   {
+      row-gap: 0;
+   }
+
+   .menu-icon
+   {
+      cursor: pointer;
+      display: inline-block;
+      z-index: 1;
+   }
+
+   .menu
+   {
+      align-items: center;
+      flex: 1 1 100%;
+      flex-direction: column;
+      grid-column: span 12;
+      height: 0;
+      justify-content: center;
+      opacity: 0;
+      transition: all .3s ease-in-out;
+   }
+
+   .menu li 
+   {
+      text-align: center;
+      width: 100%;
+   }
 }
